@@ -1,7 +1,8 @@
 /*
   WriteVoltage with Yun
 
-  Reads an analog voltage from pin 0, and writes it to a channel on ThingSpeak every 20 seconds.
+  Reads an analog voltage from pin 0, and writes it to a channel on ThingSpeak with a specified
+  interval between posts.
 
 */
 //====================================================================================
