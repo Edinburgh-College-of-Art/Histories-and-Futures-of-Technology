@@ -13,12 +13,13 @@
 
 YunClient client;
 const unsigned long postingInterval = 15000;  // delay between updates. Minimum 15000
+unsigned long lastRequest = 0;  
 
 //====================================================================================
 // API details
 
-unsigned long channelNumber = 31461;
-const char * writeAPIKey = "LD79EOAAWRVYF04Y"; // ENTER YOUR WRITE API KEY HERE!!!
+unsigned long channelNumber = 540971;
+const char * writeAPIKey = "K30EDTYMGIG43TZA"; // ENTER YOUR WRITE API KEY HERE!!!
 
 //====================================================================================
 
@@ -46,4 +47,3 @@ void loop()
 }
 
 //====================================================================================
-
