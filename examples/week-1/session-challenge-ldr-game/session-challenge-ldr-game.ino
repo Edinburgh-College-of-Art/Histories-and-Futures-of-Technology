@@ -5,10 +5,10 @@
         -   x2 LDR
         -   x1 LED
 */
-
-int ldrPin[2] = {9, 10};
 int ledPin    = 13;
+int ldrPin[2] = {A0, A1};
 int ldrThreshold[2] = {100, 100};
+
 enum GameState
 {
   NO_WINNER,
