@@ -25,8 +25,9 @@ const char* startMessage =
 "------------------------------------------\n"
 "Rules:\n"
 "\n"
-"    When the LED Turns on the first player\n" 
-"    to cover the LDR with their hand wins!\n";
+"    When the LED lights up the first player\n" 
+"    to cover the LDR with their hand wins!\n"
+"\n";
 
 void setup()
 {
@@ -61,7 +62,7 @@ void loop()
         break;
     }
 
-    Serial.print("Press Reset to Play Again");
+    Serial.print("\n\nPress Reset to Play Again\n\n");
     while (1);
   }
 }
