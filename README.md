@@ -1,5 +1,16 @@
-# Histories-and-Futures-of-Technology
-Histories and Futures of Technology sample code and wiring diagrams primarily tailored for the Arduino Yún
+# Histories and Futures of Technology - Design Informatics
 
-## Requirements
-ThingSpeak code will require that the ThingSpeak library has been [installed via the Arduino IDE](https://github.com/mathworks/thingspeak-arduino)
+![](images/di_logo.png)
+
+## Overview
+
+Sample code and wiring diagrams for the Histories and Futures of Technology course.
+
+## Course Contents
+
+- [Week 1](/examples/week-1/) - Paper Circuits
+    - [Code](/examples/week-1/README.md/#code)
+    - [Wiring Diagrams](/examples/week-1/README.md/#the-circuit)
+- [Week 2](/examples/week-2/) - Breadboarding
+    - [Code](/examples/week-2/README.md/#code)
+    - [Wiring Diagrams](/examples/week-2/README.md/#wiring-diagrams)
