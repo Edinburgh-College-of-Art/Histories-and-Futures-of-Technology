@@ -14,11 +14,19 @@ Week 3's session will focus on incorporating movement into Arduino projects. We 
 
 ## Code
 
-- [Servo_Sweep.ino](./Servo_Sweep.ino)
+### Servo
+
 - [Servo_Analog_Position.ino](./Servo_Analog_Position.ino)
+
+- [Servo_Analog_SelectMovement.ino](./Servo_Analog_SelectMovement.ino)
 - [Servo_Analog_Speed.ino](./Servo_Analog_Speed.ino)
+- [Servo_Sweep.ino](./Servo_Sweep.ino)
+
+### Stepper
 
 - [Stepper_Sweep.ino](./Stepper_Sweep.ino)
+
+- [Stepper_Analog_Position.ino](./Stepper_Analog_Position.ino)
 - [Stepper_Analog_Speed.ino](./Stepper_Analog_Speed.ino)
 
 ## Wiring Diagrams

@@ -9,9 +9,6 @@
 //  starting paramters. Changing these will change the
 //  movement "characteristics"
 //
-//  Upload this sketch and open the serial monitor to
-//  view debug messages.
-//
 // Pinout:
 //
 //  | Arduino | Servo        |
@@ -21,8 +18,6 @@
 //  | 9 (PWM) | White/Orange |
 //
 //=======================================================
-
-#include <Servo.h>
 
 //=======================================================
 // MOVEMENT PARAMTERS
@@ -37,6 +32,8 @@ int stepSpeed = 9;      // speed of step movement (0-10)
 
 //=======================================================
 
+#include <Servo.h> // Arduino servo motor library
+
 int position = startingPosition;
 int delayTime = map(stepSpeed, 0, 10, 50, 1);
 bool goingUp;
@@ -44,12 +41,10 @@ bool goingUp;
 Servo servo;  // This object will handle the servo control signals
 
 void setup() {
-  // Start serial communication
-  Serial.begin(9600);
-
   // Tell the servo object what pin the servo is connected to
   servo.attach(servoPin);
 
+  // Move to starting position
   servo.write(position);
 }
 

@@ -1,10 +1,10 @@
 //=======================================================
-// File: Stepper_Analog_Speed.ino
+// File: Stepper_Analog_Position.ino
 //
 // Description:
 //
 //  This sketch uses the analog read value to control the
-//  speed and direction of a stepper motor.
+//  position of a stepper motor.
 //
 //  Upload this sketch and open the serial monitor to
 //  view debug messages.
@@ -37,38 +37,42 @@ int in4Pin = 11;
 
 int inputPin = A0;
 
+// Stepper motors do not know their position like servos do
+// We will need to track how many steps the motor has taken in code
+int position = 0;
+
 const int stepsPerRevolution = 2048;
 Stepper stepper = Stepper(stepsPerRevolution, in1Pin, in3Pin, in2Pin, in4Pin);
-
-int dir = 1;  // cw=1, ccw=-1
 
 void setup() {
   // Start serial communication
   Serial.begin(9600);
+
+  // Set motor speed
+  stepper.setSpeed(10);
 }
 
 void loop() {
-  // Get analog input value
+
+  // Get target position from analog read value
   int readValue = analogRead(inputPin);
-  int motorSpeed;
+  int target = map(readValue, 0, 1023, 0, 204) * 10; // 0-1023 -> 0-2040
 
-  // Scale read value to set motor speed/direction
-  if (readValue < 512) {
-    motorSpeed = map(readValue, 0, 511, 10, 1);
-    dir = -1;
-
-  } else {
-    motorSpeed = map(readValue, 512, 1022, 1, 10);
-    dir = 1;
+  // Stepper in direction of target position
+  if (position < target) {
+    stepper.step(10);
+    position += 10;  // Keep track of step position
   }
-
-  // Move 10 steps
-  stepper.setSpeed(motorSpeed);
-  stepper.step(10 * dir);
+  if (position > target) {
+    stepper.step(-10);
+    position -= 10;  // Keep track of step position
+  }
 
   // Print values to serial monitor
   Serial.print(readValue);
   Serial.print(",");
-  Serial.print(motorSpeed * dir);
+  Serial.print(target);
+  Serial.print(",");
+  Serial.print(position);
   Serial.println();
 }

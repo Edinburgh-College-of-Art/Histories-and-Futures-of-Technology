@@ -24,7 +24,7 @@
 //
 //=======================================================
 
-#include <Servo.h>
+#include <Servo.h>  // Arduino servo motor library
 
 int inputPin = A0;
 int servoPin = 9;
@@ -44,15 +44,15 @@ void setup() {
 
 void loop() {
   // Get delay time from analog input value
-  int readValue = analogRead(inputPin);              // Get value from analog pin
-  int delayTime = map(readValue, 0, 1023, 10, 200);  // Scale from 0-1023 to 10-100
+  int readValue = analogRead(inputPin);             // Get value from analog pin
+  int delayTime = map(readValue, 0, 1023, 200, 1);  // Scale from 0-1023 to 200-1
 
   // Increment position
-  if (goingUp == true) position++;  // +1 if going up
-  if (goingUp == false) position--; // -1 if going down
-  
+  if (goingUp == true) position += 5;   // +5 if going up
+  if (goingUp == false) position -= 5;  // -5 if going down
+
   // Check if reached limits
-  if (position == 0) goingUp = true;    
+  if (position == 0) goingUp = true;
   if (position == 180) goingUp = false;
 
   servo.write(position);  // Set servo to new position
@@ -60,6 +60,8 @@ void loop() {
 
   // Print values to serial monitor
   Serial.print(readValue);
+  Serial.print(",");
+  Serial.print(delayTime);
   Serial.print(",");
   Serial.print(position);
   Serial.println();

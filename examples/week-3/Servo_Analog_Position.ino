@@ -24,7 +24,7 @@
 //
 //=======================================================
 
-#include <Servo.h>
+#include <Servo.h> // Arduino servo motor library
 
 int inputPin = A0;
 int servoPin = 9;
