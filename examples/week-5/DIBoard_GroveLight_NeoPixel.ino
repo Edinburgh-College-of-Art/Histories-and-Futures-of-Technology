@@ -66,5 +66,5 @@ void loop() {
   Serial.print(",");
   Serial.print(lightValue);
   Serial.print(",");
-  Serial.println(scaledValue);
+  Serial.println(ledsOn);
 }
