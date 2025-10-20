@@ -18,5 +18,7 @@ You can create your free account [here](http://www.mathworks.com/mwaccount/regis
 
 ## Code
 
+You will need to install the [WiFiNINA](https://docs.arduino.cc/libraries/wifinina/) and [ThingSpeak](https://docs.arduino.cc/libraries/thingspeak/) libraries before uploading these sketches.
+
 - [ThingSpeakWrite.ino](./ThingSpeakWrite.ino) - for posting data to cloud
 - [ThingSpeakRead.ino](./ThingSpeakRead.ino) - for pulling data from cloud
