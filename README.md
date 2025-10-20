@@ -13,3 +13,4 @@ Sample code and wiring diagrams for the Histories and Futures of Technology cour
 - [Week 3](/examples/week-3/) - Movement
 - [Week 4](/examples/week-4/) - Grove System
 - [Week 5](/examples/week-5/) - DI Board & NeoPixels
+- [Week 6](/examples/week-6/) - Data to/from the Cloud
